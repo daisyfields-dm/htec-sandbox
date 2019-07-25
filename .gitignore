@@ -1,0 +1,18 @@
+# root folders
+/.gradle/
+/.settings/
+/bin/
+/build/
+/buildGradle/
+
+# files in each subfolder
+*.classpath
+*.project
+
+# subfolders in each subfolder
+*/.gradle/
+*/.settings/
+*/bin/
+*/build/
+*/buildGradle/
+*/target/
