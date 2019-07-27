@@ -20,6 +20,9 @@ public class LoginPage {
 	@FindBy(xpath = "//button[contains(.,'Submit')]")
 	private WebElement submitButton;
 
+	@FindBy(className = "invalid-feedback")
+	private WebElement errorMessage;
+
 	public LoginPage(WebDriver webDriver) {
 		this.webDriver = webDriver;
 		PageFactory.initElements(webDriver, this);
@@ -39,5 +42,9 @@ public class LoginPage {
 
 	public void clickSubmitButton() {
 		submitButton.click();
+	}
+
+	public String getErrorMessage() {
+		return errorMessage.getText();
 	}
 }

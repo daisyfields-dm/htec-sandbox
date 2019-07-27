@@ -1,13 +1,33 @@
-package com.htec.sandbox.selenium.driver;
+package com.htec.sandbox;
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class WebDriverInitializer {
+public class WebDriverInstance {
 
-	public static WebDriver init() {
+	private static WebDriverInstance INSTANCE;
+
+	private WebDriver webDriver;
+
+	private WebDriverInstance() {
+		webDriver = initWebDriver();
+	}
+
+	public static WebDriver get() {
+		if (INSTANCE == null) {
+			INSTANCE = new WebDriverInstance();
+		}
+		return INSTANCE.webDriver;
+	}
+
+	public static void closeWebDriver() {
+		WebDriver webDriver = get();
+		webDriver.close();
+	}
+
+	private static WebDriver initWebDriver() {
 		String geckoDriverPath = Thread.currentThread().getContextClassLoader()
 				.getResource("com/htec/sandbox/selenium/drivers/geckodriver.exe").getPath();
 		System.setProperty("webdriver.gecko.driver", geckoDriverPath);

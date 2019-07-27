@@ -2,12 +2,8 @@ package com.htec.sandbox;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
+import org.junit.jupiter.api.Test;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class HelloWorldTest {
 
 	@Test
@@ -23,7 +19,7 @@ public class HelloWorldTest {
 	}
 
 	@Test
-	@Ignore
+//	@Ignore
 	public void ignoreTestExample() {
 
 		// GIVEN
