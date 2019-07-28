@@ -25,6 +25,7 @@ public class WebDriverInstance {
 	public static void closeWebDriver() {
 		WebDriver webDriver = get();
 		webDriver.close();
+		INSTANCE = null;
 	}
 
 	private static WebDriver initWebDriver() {

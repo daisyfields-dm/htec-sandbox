@@ -17,6 +17,7 @@ import com.htec.sandbox.dashboard.DashboardPage;
 @ExtendWith({ //
 		WebDriverInitExtension.class, //
 		WebDriverCloseExtension.class, //
+		LogoutExtension.class //
 })
 @TestMethodOrder(OrderAnnotation.class)
 public class LoginPageTest {
